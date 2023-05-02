@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OpenAIController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/openai', [OpenAIController::class, 'index']);
+Route::post('/openaipost', [OpenAIController::class, 'store'])->name('openAI');
